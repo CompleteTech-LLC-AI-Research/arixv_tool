@@ -1,0 +1,2 @@
+# The arXiv Paper Manager uses Python's standard library
+# No additional dependencies required!
