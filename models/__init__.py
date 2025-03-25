@@ -8,12 +8,12 @@ This package provides modules for handling various types of data:
 - SDK metadata conversion for AI agent integration
 """
 
-from models.metadata import extract_and_save_metadata, parse_metadata_files
-from models.pdf_extractor import extract_text_from_pdf, get_paper_full_content
-from models.sdk_metadata import arxiv_search_to_sdk, output_sdk_json
+from arxiv_tool.models.metadata import extract_and_save_metadata, parse_metadata_files
+from arxiv_tool.models.pdf_extractor import extract_text_from_pdf, get_paper_full_content
+from arxiv_tool.models.sdk_metadata import arxiv_search_to_sdk, output_sdk_json
 
 try:
-    from models.sdk_metadata import ArxivPaper, ArxivSearchResults
+    from arxiv_tool.models.sdk_metadata import ArxivPaper, ArxivSearchResults
     PYDANTIC_MODELS_AVAILABLE = True
 except:
     PYDANTIC_MODELS_AVAILABLE = False

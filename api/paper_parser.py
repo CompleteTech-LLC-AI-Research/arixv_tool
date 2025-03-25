@@ -8,9 +8,9 @@ This module provides functions to parse and extract metadata from arXiv API resp
 import xml.etree.ElementTree as ET
 from typing import Dict, Optional, Any, List, Union
 
-from config import XML_NAMESPACES
-from utils import extract_paper_id, get_simplified_paper_id, sanitize_filename
-from api.arxiv_client import extract_pdf_url
+from arxiv_tool.config import XML_NAMESPACES
+from arxiv_tool.utils import extract_paper_id, get_simplified_paper_id, sanitize_filename
+from .arxiv_client import extract_pdf_url
 
 
 def extract_summary(entry: ET.Element, ns: Dict[str, str]) -> str:
@@ -129,7 +129,7 @@ def extract_paper_details_from_xml(xml_response: str) -> Optional[Dict[str, Any]
         paper_id = extract_paper_id(paper_id)
         
         # Get ID parts
-        from utils import extract_paper_id_parts
+        from arxiv_tool.utils import extract_paper_id_parts
         parts = extract_paper_id_parts(paper_id)
         
         # Get simplified ID and create safe directory name

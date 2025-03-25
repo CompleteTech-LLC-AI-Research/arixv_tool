@@ -14,8 +14,8 @@ import sqlite3
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple, Any, Union
 
-from config import DB_FILE
-from utils import extract_paper_id_parts, get_simplified_paper_id, sanitize_filename
+from arxiv_tool.config import DB_FILE
+from arxiv_tool.utils import extract_paper_id_parts, get_simplified_paper_id, sanitize_filename
 
 
 def initialize_db() -> bool:

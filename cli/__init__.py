@@ -6,9 +6,9 @@ This package provides modules for interacting with the arXiv Paper Manager
 through a command-line interface.
 """
 
-from cli.interactive import start_interactive_cli
-from cli.parser import parse_args
-from cli.commands import (
+from .interactive import start_interactive_cli
+from .parser import parse_args
+from .commands import (
     search_paper, batch_download_from_file, import_pdf_files,
     fetch_metadata_for_imported_papers, check_for_paper_updates,
     process_existing_directories

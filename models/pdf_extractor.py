@@ -8,7 +8,7 @@ This module provides functions for extracting text from downloaded PDF files.
 import os
 from typing import Dict, Optional
 
-from config import PDF_SUBDIR
+from arxiv_tool.config import PDF_SUBDIR
 
 
 # Use pypdf for PDF text extraction
@@ -62,8 +62,8 @@ def get_paper_full_content(paper_id: str, max_chars: int = 100000) -> Dict:
     Returns:
         dict: Dictionary containing both metadata and PDF text
     """
-    from database import get_paper_details
-    from models.metadata import parse_metadata_files
+    from arxiv_tool.database import get_paper_details
+    from arxiv_tool.models.metadata import parse_metadata_files
     
     # First, get the paper details from the database
     paper_details = get_paper_details(paper_id)

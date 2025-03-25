@@ -10,8 +10,8 @@ import os
 import xml.etree.ElementTree as ET
 from typing import Dict, List, Optional, Any
 
-from config import METADATA_SUBDIR, XML_NAMESPACES
-from utils import (
+from arxiv_tool.config import METADATA_SUBDIR, XML_NAMESPACES
+from arxiv_tool.utils import (
     extract_paper_id, get_simplified_paper_id, sanitize_filename, 
     ensure_dir_exists, save_to_file
 )

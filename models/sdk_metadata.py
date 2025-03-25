@@ -70,7 +70,7 @@ def read_metadata_files(paper_id: str, directory: str) -> Dict[str, Any]:
         dict: Dictionary containing metadata values
     """
     import os
-    from config import METADATA_SUBDIR
+    from arxiv_tool.config import METADATA_SUBDIR
     
     metadata_dir = os.path.join(directory, METADATA_SUBDIR)
     if not os.path.exists(metadata_dir):

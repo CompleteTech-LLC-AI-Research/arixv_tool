@@ -9,9 +9,9 @@ for the arXiv Paper Manager.
 import os
 from typing import Optional
 
-from database import initialize_db, list_downloaded_papers, search_local_papers
-from utils import print_papers_table
-from cli.commands import (
+from arxiv_tool.database import initialize_db, list_downloaded_papers, search_local_papers
+from arxiv_tool.utils import print_papers_table
+from arxiv_tool.cli.commands import (
     search_paper, batch_download_from_file, import_pdf_files,
     fetch_metadata_for_imported_papers, check_for_paper_updates, process_existing_directories
 )

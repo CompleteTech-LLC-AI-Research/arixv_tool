@@ -16,17 +16,17 @@ import sqlite3
 import xml.etree.ElementTree as ET
 from typing import Dict, List, Optional, Any, Tuple, Union
 
-from config import METADATA_SUBDIR, PDF_SUBDIR, DEFAULT_DELAY, XML_NAMESPACES
-from database import (
+from arxiv_tool.config import METADATA_SUBDIR, PDF_SUBDIR, DEFAULT_DELAY, XML_NAMESPACES
+from arxiv_tool.database import (
     initialize_db, paper_exists, record_paper_download, update_paper_status,
     list_downloaded_papers, search_local_papers
 )
-from api import (
+from arxiv_tool.api import (
     search_arxiv, save_response_to_file, extract_pdf_url, download_arxiv_pdf, 
     extract_paper_details_from_xml, search_with_retry, create_entry_xml
 )
-from models import extract_and_save_metadata
-from utils import (
+from arxiv_tool.models import extract_and_save_metadata
+from arxiv_tool.utils import (
     extract_paper_id_parts, get_simplified_paper_id, sanitize_filename,
     ensure_dir_exists, is_valid_arxiv_id, print_papers_table, extract_paper_id
 )

@@ -6,12 +6,12 @@ This package provides functions for interacting with the arXiv API,
 downloading papers, and parsing API responses.
 """
 
-from api.arxiv_client import (
+from .arxiv_client import (
     search_arxiv, save_response_to_file, extract_pdf_url, download_arxiv_pdf,
     search_with_retry, create_entry_xml
 )
 
-from api.paper_parser import (
+from .paper_parser import (
     extract_paper_details_from_xml
 )
 

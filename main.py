@@ -9,17 +9,17 @@ but can be run as a module: python -m main
 import sys
 import json
 
-from cli import (
+from arxiv_tool.cli import (
     parse_args, start_interactive_cli, search_paper, batch_download_from_file,
     import_pdf_files, fetch_metadata_for_imported_papers, check_for_paper_updates,
     process_existing_directories
 )
-from database import initialize_db, list_downloaded_papers
-from utils import print_papers_table
+from arxiv_tool.database import initialize_db, list_downloaded_papers
+from arxiv_tool.utils import print_papers_table
 
 # Check for SDK metadata support
 try:
-    from models.sdk_metadata import arxiv_search_to_sdk, output_sdk_json
+    from arxiv_tool.models.sdk_metadata import arxiv_search_to_sdk, output_sdk_json
     AGENT_SDK_AVAILABLE = True
 except ImportError:
     AGENT_SDK_AVAILABLE = False
@@ -58,7 +58,7 @@ def main():
         if sdk_output:
             # Output in Agent SDK compatible format
             try:
-                from database import list_downloaded_papers as db_list_papers
+                from arxiv_tool.database import list_downloaded_papers as db_list_papers
                 papers_data = db_list_papers()
                 
                 # Create a simple result structure
